@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Calculator</title>
+ 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="tax.css">
+</head>
+<body>
+
+<div class="container">
+    <h2 class="center-align">Tax Calculator</h2>
+    
+    <form id="taxForm">
+        <div class="input-field">
+            <input type="number" id="grossIncome" required>
+            <label for="grossIncome">Gross Annual Income <i class="material-icons tooltipped" data-position="right" data-tooltip="Gross annual income is your total salary in a year before any deductions.">&#x2139</i></label>
+            <i class="material-icons right error-icon tooltipped" style="display:none;">error</i>
+        </div>
+        <div class="input-field">
+            <input type="number" id="extraIncome" required>
+            <label for="extraIncome">Extra Income <i class="material-icons tooltipped" data-position="right" data-tooltip="Any extra income earned.">&#x2139</i></label>
+            <i class="material-icons right error-icon tooltipped" style="display:none;">error</i>
+        </div>
+        <div class="input-field">
+            <select id="ageGroup" required>
+                <option value="" disabled selected>Choose your age group</option>
+                <option value="<40">Under 40</option>
+                <option value="40-59">40 to 59</option>
+                <option value="60+">60 and over</option>
+            </select>
+            <label>Age Group <i class="material-icons tooltipped" data-position="right" data-tooltip="select your age group.">&#x2139</i></label>
+            <i class="material-icons right error-icon tooltipped" style="display:none;">error</i>
+        </div>
+        <div class="input-field">
+            <input type="number" id="deductions" required>
+            <label for="deductions">Total Applicable Deductions <i class="material-icons tooltipped" data-position="right" data-tooltip="Total applicable deductions in income tax vary by jurisdiction and personal circumstances,</br> including expenses like mortgage interest and charitable contributions. ">&#x2139</i></label>
+            <i class="material-icons right error-icon tooltipped" style="display:none;">error</i>
+        </div>
+        <button class="btn waves-effect waves-light" type="submit">Submit</button>
+    </form>
+</div>
+
+
+<div id="resultModal" class="modal">
+    <div class="modal-content">
+        <h4>Tax Calculation Result</h4>
+        <p id="modalContent"></p>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="tax.js"></script>
+</body>
+</html>
